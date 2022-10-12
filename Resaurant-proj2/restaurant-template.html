@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>restaurant template</title>
+    <!-- <link href="restaurant-template.css" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="restaurant-template.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <style>
+        .vic-row{
+            background-color: rgb(197, 205, 221);
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        a:hover{
+            color: black;
+        }
+        .font{
+            font-family: 'Spectral', serif;
+            font-weight:300;
+            font-style: italic;
+            font-size: 44px;
+        }
+        .menu1 > .col:nth-child(odd){
+            border-top-left-radius: 25px;
+            background-color: #ed816e;
+            font-weight: 600;
+        }
+        .menu1 > .col:nth-child(even){
+            border-bottom-left-radius: 25px;
+            background-color: gray;
+            font-weight: 600;
+        }
+        .colorx{
+            box-shadow: 2px 2px 10px black;
+            background-image: url(image/restaurant1.webp);
+            background-size: contain;
+            background-repeat: no-repeat;
+            /* background-size: cover; */
+            height: 600px;
+            background-position: center;
+            text-align: center;
+
+        }
+        .div-h3-font{
+            text-align: center;
+            margin: 15% 25% 0 25%;
+            position: absolute;
+            color:white;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .h1-asian-font{
+            font-family: serif;
+            font-weight: 600;
+            font-size: 45px;
+        }
+        .button-order{
+           background: transparent;
+            border: 0.5px solid #ed816e;;
+            border-radius: 5px;
+            font-size: 10pt;
+            font-weight: 600;
+        }
+        .button-order:hover{
+            border: 1px solid silver;
+            font-weight: 600;
+        }
+        .image-cook1{
+            width: 100%;
+            margin-top: 35px;
+            /*position: relative; */
+        }
+        .image-cook{
+            width: 100%;
+            margin-top: 35px;
+            float:right;
+            /*position: relative; */
+        }
+        /* .image-grid{
+            display: grid;
+            grid-template-columns: 20% 15% 15% 20%;
+            justify-content: center;
+        } */
+        .col1r{
+            word-break: break-word;
+            /* display: grid;
+            justify-content: center; */
+            background-color: #f2745f;
+            /* grid-column-start: 2;
+            grid-column-end: 4; */
+        }
+        .ordernow-btn{
+            width: 50%;
+            background-color:rgb(71, 69, 69);
+            transition: all 1s;
+            margin-top: 10px;
+            position: relative;
+            left: 25%;
+            /* border: none; */
+            /* font-size: 10pt; */
+            font-weight: 700;
+            color:white;
+            border: 2px solid white;
+
+        }
+        .or-order{
+            width: 30px;
+            margin: auto;
+            font-size: 12px;
+            /* position: relative; */
+            /* left: 45%; */
+            /* border: 12px solid red; */
+            /* font-size: small; */
+            /* height: 25px; */
+            /* width: 30px; */
+        }
+        .order-num{
+            background-color: #ed816e;
+        }
+        .brfast-img{
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            border: 10px solid #eaf0ff;
+            border-radius: 50%;
+        }
+        .brfast-img:hover{
+            z-index: 2;
+            cursor:pointer;
+            transform: scale(1.3);
+            transition: all 0.5s;
+            border: none;
+
+        }
+        .img-name{
+            margin-top: 12pt;
+            color: #190b0b;
+            text-shadow: 0.1px 0.1px 5px black;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            font-size: 20pt;
+            font-weight: 500;
+        }
+        select{
+            font-size: 10pt;
+            margin-top: 25px;
+            border-radius: 5px;
+            border: none;
+            border-bottom:2px solid silver;
+            width: 142px;
+            padding: 10px;
+        }
+        select:hover{
+            border: none;
+            box-shadow: 2px 2px 1px blue ;
+            color:silver;
+        }
+        input{
+            margin-top: 35px;
+            border-radius: 5px;
+            border: none;
+            border-bottom:2px solid silver;
+            width: 142px;
+            padding: 10px;
+        }
+        input:hover{
+            border: none;
+            box-shadow: 2px 2px 1px blue ;
+            color:silver;
+        }
+        .btn2{
+            margin-top: 35px;
+            border-radius: 5px;
+            border: none;
+            color:white ;
+            background-color: #f2745f;
+            border-bottom:2px solid silver;
+            width: 142px;
+            padding: 5px;
+        }
+        .btn2:hover{
+            border: none;
+            box-shadow: 2px 2px 1px blue ;
+            color:silver;
+        }
+        .book-img{
+            background-image: url(image/book-bg.jpg);
+            overflow: hidden;
+        }
+        .bg-danger1{
+            background-color: #f2745f;
+        }
+        .row7{
+            font-family: sans-serif;
+            background-color: #f2f6ff;
+            padding: 30px;
+        }
+        .row71{
+            font-family: sans-serif;
+            background-color: white;
+            padding: 30px;
+        }
+        .row88{
+            background-color: #f2f6ff;
+        }
+        .blog-img-item{
+            width: 100%;
+            float: left;
+            padding-right: 10px;
+            background-color: white;
+        }
+        .row8{
+            display: grid;
+            grid-template-columns: 50% 50%;
+            row-gap: 20px;
+            column-gap: 10px;
+            
+        }
+        .row8 > .col{
+            background-color: #f2f6ff;
+        }
+        .tet-blog{
+            word-spacing: 2px;
+            line-height: 25px;
+            font-size: 14pt;
+        }
+        .readmore{
+            font-size: 12pt;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: 500;
+            color: #f2745f;
+            margin-top: 50px;
+        }
+        .date{
+            position: absolute;
+            color: #f2745f;
+            font-weight: 700;
+            border-bottom-right-radius: 20px;
+            padding: 8px;
+            background-color: rgba(250, 250, 250, 0.9);
+        }
+        .txt-par{
+            padding: 5px;
+            font-size: 10pt;
+
+            /* background-color: white; */
+            /* min-height: 100%; */
+        }
+        .singup-bg{
+            background-image: url(image/restaurant\ 3.webp);
+            min-height: 220px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        i{
+            margin-left: 5px;
+            padding: 6px;
+            background-color: white;
+            color: black;
+            border-radius: 40%;
+        }
+        .txt-myname{
+            font-weight: 600;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-shadow:0.5px 0.5px blue;
+        }
+        .row10 > i{
+            color: white;
+            font-size: 18pt;
+            background-color: black;
+        }
+        .arrowtop{
+            position: sticky;
+            bottom: 10vh;
+            text-align: center;
+            color: white;
+            border-radius: 0;
+            width: 30px;
+            height: 30px;
+            background-color: black;
+
+        }
+        .imghover:hover{
+            width: 90%;
+            transition:all 0.5s;
+        }
+        @media screen and (min-width:1px) and (max-width:575px) {
+            /* body{
+                display:none;
+            } */
+            .colorx{
+                background-size: contain;
+            }
+            .h1-asian-font{
+                font-size: 25px;
+                word-break: break-word;
+            }
+            .bookcol{
+                display: flex;
+                flex-direction: column;
+            }
+            .bookcol > .bookcol1 , .bookcol2{
+                width: 100%;
+                /* display: none; */
+            }
+            .sign-btn{
+                width: 50%;
+                font-size: 10pt;
+            }
+            .sign-input{
+                width: 40% !important;
+            }
+            .copyright{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                /* background-color: #ed816e; */
+            }
+        }
+        @media screen and (min-width:1px) and (max-width:992px){
+            .colorx{
+                background-size: cover;
+            }
+            .image-cook{
+                width: 70%;
+                
+                
+                /* display: none; */
+            }
+            .image-cook1{
+                width: 70%;
+                margin-top: 0;
+                float: center;
+                /* display: none; */
+            }
+            .bookcol{
+                display: flex;
+                flex-direction: column;
+            }
+            .bookcol > .bookcol1 , .bookcol2{
+                width: 100%;
+                /* display: none; */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid vic-row">
+        <div class="container w-50 text-center p-2">
+            <div class="row row-cols-1 row-cols-xm-1">
+                <div class="h2 font" ><a href="#" id="HOME">victory</a></div>
+            </div>
+            <hr>
+            <div class="row menu1 row-cols-1 row-cols-sm-2 row-cols-lg-4 ">
+                <div class="col"><a href="#HOME">HOME</a></div>
+                <div class="col"><a href="#ourmenus">OUR MENUS</a></div>
+                <div class="col"><a href="#blogentries">BLOG ENTRIES</a></div>
+                <div class="col"><a href="#signup">SIGNUP</a></div>
+            </div>
+        </div>
+    </div>
+    <!-- row2 -->
+    <div class="container-fluid colorx mb-5" id="ourmenus">
+            <div class="row">
+                <div class="div-h3-font text-center w-50">here you can find delecious foods<br>
+                    <span class="h1 text-white h1-asian-font lh-lg">asian restaurant</span><br>
+                    <span class="text-capitalize">Quisque nec nibh id lacus fringilla eleifend sed sit amet sem. Donec lectus odio, mollis a nisl non, tempor interdum nisl.</span>
+                    <br><br>
+                    <button class="button-order p-2 m-1 text-white">ORDER RIGHT NOW</button>
+                </div>
+            </div>
+    </div>
+    <!-- row 3 -->
+    <div>
+    <div class="container-fluid">
+        <div class="container w-75">
+            <div class="row image-grid g-0">
+                <div class="col col-12 col-lg-4 d-flex justify-content-around"><img class="image-cook imghover" src="image/cook_01.jpg" alt=""/></div>
+                <div class="col col-12 col-lg-4 bg-black col1r">
+                    <h4 class="text-white text-center p-3">WE COOK DELECIOUS</h4>
+                    <p class="text-white order-num text-center p-2 mb-1">YOU CAN CALL US ON: <br>+ 1234 567 8910
+                    </p><br>
+                    <p class=" or-order text-white text-center rounded-5  border border-dark border-2">OR</p>
+                    <button class="ordernow-btn p-2 btn ">ORDER NOW</button><br><br>
+                </div>
+                <div class="col col-12 col-lg-4 d-flex justify-content-around"><img class="image-cook1 imghover " src="image/cook_02.jpg" alt=""/></div>
+            </div>
+        </div>
+    </div>
+<!-- row 4-->
+<div class="container-fluid mt-5 p-4 ">
+    <div class="container w-75 text-center">
+        <div class="row">
+            <div class="col col-12 col-sm-6 col-lg-3"><img class="brfast-img w-100" src="image/breakfast_menu.jpg" alt=""/> <div class="img-name">Breakfast</div></div>
+            <div class="col col-12 col-sm-6 col-lg-3"><img class="brfast-img w-100" src="image/cook_lunch.png" alt=""/> <div class="img-name">Lunch</div></div>
+            <div class="col col-12 col-sm-6 col-lg-3"><img class="brfast-img w-100" src="image/cook_dessert.png" alt=""/> <div class="img-name">Dinner</div></div>
+            <div class="col col-12 col-sm-6 col-lg-3"><img class="brfast-img w-100" src="image/cook_dinner.png" alt=""/> <div class="img-name">Desserts</div></div>
+        </div>
+    </div>
+</div>
+<!-- row 5 -->
+<div class="container-fluid mt-5 p-4 book-img">
+    <div class="h2 text-center p-5 text-white">BOOK YOUR TABLE NOW</div>
+    <div class="container text-center">
+        <div class="row bookcol g-0">
+            <div class="col bookcol1 "><img class="w-100" src="image/book_left_image.jpg" alt=""/></div>
+            <div class="col bookcol2 form-control">
+                <h2 class="text-center text-black p-1">Reservation</h2>
+                <select class=" p-1 text-start"> 
+                    <option value="select day">Select Day</option>
+                    <option value="monday">monday</option>
+                    <option value="tuesday">tuesday</option>
+                    <option value="wednesday">wednesday</option>
+                    <option value="thursday">thursday</option>
+                    <option value="friday">friday</option>
+                    <option value="staurday">staurday</option>
+                    <option value="sunday">sunday</option>
+
+                </select>
+                <select class=" p-1 text-start">
+                    <option value="select day">Select Hours</option>
+                    <option value="monday">1 Hour</option>
+                    <option value="tuesday">2 Hours</option>
+                    <option value="wednesday">3 Hours</option>
+                    <option value="thursday">4 Hours</option>
+                    <option value="friday">5 Hours</option>
+                    <option value="staurday">6 Hours</option>
+                    <option value="sunday">7 Hours</option>
+                </select><br>
+                <input type="text" value="Full Name"> <input type="+telphone" value="Phone Number"><br>
+                <select class=" p-1 text-start">
+                    <option value="select day">How Many Persons</option>
+                    <option value="monday">1</option>
+                    <option value="tuesday">2</option>
+                    <option value="wednesday">3</option>
+                    <option value="thursday">4</option>
+                    <option value="friday">5</option>
+                    <option value="staurday">6</option>
+                    <option value="sunday">7</option>
+                </select>
+                <button class="btn2">BOOK TABLE</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- row 6 -->
+<div class="container-fluid p-4 bg-danger1">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center text-white"><h5>GET APPLICATION FOR YOUR PHONE</h5></div>
+        </div>
+        <div class="row">
+            <div class="col mt-4 text-center text-white"><button class="btn text-white">DOWNLOAD NOW</button></div>
+        </div>
+    </div>
+</div>
+<!-- row 7 -->
+<div class="container-fluid mt-5 p-4 ">
+    <div class="container">
+        <h4 class="text-center p-5">WEEKLY FEATURED FOOD</h4>
+        <div class="row col-lg-12 text-center ">
+            <div class="col-12 col-lg-4 row7 "><div class="h3 items text-start">Breakfast</div> <hr><img class="brfast-img-item  w-100" src="image/breakfast_item.jpg" alt=""/> <div class="text-start p-2 bg-white pt-3"><h5>Kale Chips Art Party </h5><p>Dreamcatcher squid ennui cliche chicharros nes echo small batch jean shorts hexagon street art knausgaard wolf...</p> </div></div>
+            <div class="col-12 col-lg-4 row71"><div class="h3 items text-start">Lunch</div>     <hr><img class="brfast-img-item w-100" src="image/lunch_item.jpg" alt=""/>     <div class="text-start p-2 bg-white pt-3"><h5> Gastro Tousled Batch </h5><p>Dreamcatcher squid ennui cliche chicharros nes echo small batch jean shorts hexagon street art knausgaard wolf...</p></div>    </div>
+            <div class="col-12 col-lg-4 row7 "><div class="h3 items text-start">Dinner</div>    <hr><img class="brfast-img-item w-100" src="image/dinner_item.jpg" alt=""/>    <div class="text-start p-2 bg-white pt-3"> <h5>Squid Jean Shorts</h5>    <p>Dreamcatcher squid ennui cliche chicharros nes echo small batch jean shorts hexagon street art knausgaard wolf...</p></div>   </div>
+        </div>
+    </div>
+</div>
+<!-- row 8 -->
+<div class="container-fluid row88 mt-5 p-4 " id="blogentries">
+    <div class="container ">
+        <h4 class="text-center p-5">OUR BLOG POST</h4>
+        <div class="row row8">
+            <div class="col d-flex flex-column"><img class="blog-img-item p-2" src="image/blog_post_01.jpg" alt=""/><div class="date">27.08.2022</div>  <div class=" txt-par bg-white tet-blog"><h5>Stumptown Tofu Schlitz </h5><p>Skateboard iceland twee tofu shaman crucifix vice before they sold out corn hole occupy drinking vinegar chambra meggings kale chips hexagon... <br><br><span class="readmore">CONTINUE READING</span></p> </div></div>
+            <div class="col d-flex flex-column"><img class="blog-img-item p-2" src="image/blog_post_02.jpg" alt=""/>    <div class="date">27.08.2022</div>  <div class="txt-par bg-white tet-blog"><h5> Succulents Hashtag Folk </h5><p>Skateboard iceland twee tofu shaman crucifix vice before they sold out corn hole occupy drinking vinegar chambra meggings kale chips hexagon... <br><br><span class="readmore">CONTINUE READING</span></p></div>    </div>
+            <div class="col d-flex flex-column"><img class="blog-img-item p-2" src="image/blog_post_03.jpg" alt=""/>   <div class="date">27.08.2022</div>  <div class="txt-par bg-white tet-blog"> <h5>Knaus Sriracha Pinterest</h5>    <p>Skateboard iceland twee tofu shaman crucifix vice before they sold out corn hole occupy drinking vinegar chambra meggings kale chips hexagon... <br><br><span class="readmore">CONTINUE READING</span></p></div>   </div>
+            <div class="col d-flex flex-column"><img class="blog-img-item p-2" src="image/blog_post_04.jpg" alt=""/><div class="date">27.08.2022</div>  <div class="txt-par bg-white tet-blog"><h5>Stumptown Tofu Schlitz </h5><p>Skateboard iceland twee tofu shaman crucifix vice before they sold out corn hole occupy drinking vinegar chambra meggings kale chips hexagon... <br><br><span class="readmore">CONTINUE READING</span></p> </div></div>
+        </div>
+    </div>
+</div>
+<!-- row 9 -->
+<div class="container-fluid singup-bg mt-5 p-4 " id="signup">
+    <div class="container ">
+        <h4 class="text-center text-white">SIGNUP FOR OUR NEWSLETTERS</h4>
+        <div class="row">
+            <div class="col text-center singup"><input class="sign-input w-25 me-4 h-50" type="email" value="Enter Your email" required><button class="sign-btn btn  border border-1  text-white">SEND MESSAGE</button></div>
+        </div>
+    </div>
+</div>
+<!-- row 10 -->
+<div class="container-fluid bg-black p-5">
+    <div class="container">
+        <div class="row text-center text-white copyright g-3">
+           <div class="col">Copyright &copy; 2020 Victory Template</div>
+           <div class="col row10 d-flex justify-content-center"><div class="tools" title="facebook"><i class="fa-brands fa-facebook"></i></div> <div title="twitter"><i class="fa-brands fa-twitter"></i> </div><div><i class="fa-brands fa-linkedin-in"></i></div><div> <i class="fa-solid fa-wifi"></i></div><div> <i class="fa-solid fa-basketball"></i></div></div>
+           <div class="col txt-myname">Design: Arul Manikandan</div>
+        </div>
+    </div>
+</div>
+<a href="#HOME"><i class="fa-solid fa-arrow-up arrowtop"></i></a></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
